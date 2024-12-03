@@ -53,17 +53,6 @@ db.serialize(() => {
     `);
 });
 
-db.run(
-    'INSERT INTO users (username, password, is_admin) VALUES (?, ?, ?)',
-    ['admin', 'admin', 1],  // 1 für Admin
-    (err) => {
-        if (err) {
-            console.log('Fehler beim Erstellen des Admin-Benutzers:', err.message);
-            return;
-        }
-        console.log('Admin-Benutzer erfolgreich erstellt!');
-    }
-);
 
 
 // Multer für Datei-Uploads konfigurieren
@@ -107,15 +96,47 @@ app.post('/login', (req, res) => {
     });
 });
 
-app.get('/dashboard', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'dashboard.html'));
+
+
+
+
+app.get('/stream', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'stream.html'));
 });
+
+app.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'main.html'));
+});
+
+app.get('/paint', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'cad.html'));
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.post('/upload', upload.single('file'), (req, res) => {
     if (!req.file) {
         return res.status(400).send('Keine Datei hochgeladen.');
     }
-    res.redirect('/dashboard');
+    res.redirect('/dashboard2');
 });
 
 app.get('/tasks', (req, res) => {

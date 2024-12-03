@@ -1,28 +1,76 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+#upload{
+    background-color: rgba(205, 205, 205, 0.7);
+    height: 200px;
 }
 
-header {
-    background-color: #333;
+#upload h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#upload form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.ib{
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0057b300;
     color: white;
-    padding: 1em;
-    text-align: center;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 1);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-nav {
-    margin: 1em 0;
-    text-align: center;
+#ibs{
+    display: none;
 }
 
-nav a {
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0057b300;
     color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 1);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#file1{
+    margin-top: -100;
+}
+
+#video{
+    margin-top: 300px;
+    margin-left: 300px;
+}
+
+#menu{
+    background-color: rgba(205, 205, 205, 0.7);
+    padding: 1rem;
+}
+
+#menu .linkdiv .link{
     text-decoration: none;
-    margin: 0 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .3);
 }
 
-nav a:hover {
-    text-decoration: underline;
+#menu .linkdiv{
+    padding: 5px;
 }
