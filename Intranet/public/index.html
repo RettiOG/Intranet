@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet-Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Willkommen im Intranet</h1>
+    </header>
+    <main>
+        <section class="login-container">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <label for="username">Benutzername:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Passwort:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Anmelden</button>
+            </form>
+            <p>Noch keinen Account? <a href="/register">Hier registrieren</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Dein Unternehmen. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>

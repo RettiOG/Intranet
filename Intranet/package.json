@@ -1,0 +1,24 @@
+
+{
+    "name": "intranet_project",
+    "version": "1.0.0",
+    "description": "Ein einfaches Intranet-System mit Benutzerverwaltung, Aufgabenmanagement, Kalender und Chat.",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "author": "Dein Name",
+    "license": "MIT",
+    "dependencies": {
+      "bcrypt": "^5.1.0",
+      "express": "^4.18.2",
+      "multer": "^1.4.5",
+      "socket.io": "^4.7.2",
+      "sqlite3": "^5.1.6"
+    },
+    "devDependencies": {},
+    "engines": {
+      "node": ">=16.0.0"
+    }
+  }
+  

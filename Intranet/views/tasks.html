@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Aufgabenverwaltung</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Aufgaben</h1>
+    </header>
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/calendar">Kalender</a>
+        <a href="/chat">Chat</a>
+        <a href="/">Logout</a>
+    </nav>
+    <section>
+        <h2>Neue Aufgabe hinzufügen</h2>
+        <form action="/tasks" method="POST">
+            <label for="task_name">Aufgabenname:</label>
+            <input type="text" id="task_name" name="task_name" required>
+            <label for="due_date">Fälligkeitsdatum:</label>
+            <input type="date" id="due_date" name="due_date">
+            <button type="submit">Hinzufügen</button>
+        </form>
+    </section>
+    <section>
+        <h2>Bestehende Aufgaben</h2>
+        <ul id="tasks-list">
+            <!-- Aufgaben werden hier mit JavaScript geladen -->
+        </ul>
+    </section>
+    <script>
+        fetch('/tasks')
+            .then(response => response.json())
+            .then(tasks => {
+                const list = document.getElementById('tasks-list');
+                tasks.forEach(task => {
+                    const li = document.createElement('li');
+                    li.textContent = `${task.task_name} (Fälligkeitsdatum: ${task.due_date || 'Keins'})`;
+                    list.appendChild(li);
+                });
+            });
+    </script>
+</body>
+</html>

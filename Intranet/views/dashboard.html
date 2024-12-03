@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Willkommen im Intranet</h1>
+    </header>
+    <nav>
+        <a href="/tasks">Aufgaben</a>
+        <a href="/calendar">Kalender</a>
+        <a href="/chat">Chat</a>
+        <a href="/">Logout</a>
+    </nav>
+    <section>
+        <h2>Datei-Upload</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Hochladen</button>
+        </form>
+    </section>
+</body>
+</html>

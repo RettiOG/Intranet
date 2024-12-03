@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Chat</h1>
+    </header>
+    <nav>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/tasks">Aufgaben</a>
+        <a href="/calendar">Kalender</a>
+        <a href="/">Logout</a>
+    </nav>
+    <section>
+        <div id="chat-box" style="border: 1px solid #ccc; height: 300px; overflow-y: auto; margin-bottom: 10px;">
+            <!-- Nachrichten werden hier geladen -->
+        </div>
+        <input type="text" id="message-input" placeholder="Nachricht eingeben">
+        <button id="send-btn">Senden</button>
+    </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/js/chat.js"></script>
+    <script>
+        const socket = io();
+        const chatBox = document.getElementById('chat-box');
+        const messageInput = document.getElementById('message-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        socket.on('message', (msg) => {
+            const message = document.createElement('p');
+            message.textContent = msg;
+            chatBox.appendChild(message);
+        });
+
+        sendBtn.addEventListener('click', () => {
+            const message = messageInput.value;
+            if (message.trim()) {
+                socket.emit('message', message);
+                messageInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
+d
