@@ -66,7 +66,7 @@ const upload = multer({ storage });
 
 // Routen
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'login.html'));
+    res.sendFile(path.join(__dirname, 'views', 'main.html'));
 });
 
 app.post('/register', async (req, res) => {
@@ -102,10 +102,6 @@ app.post('/login', (req, res) => {
 
 app.get('/stream', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'stream.html'));
-});
-
-app.get('/dashboard', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'main.html'));
 });
 
 app.get('/paint', (req, res) => {
