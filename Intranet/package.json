@@ -7,7 +7,7 @@
     "scripts": {
       "start": "node server.js"
     },
-    "author": "Dein Name",
+    "author": "Lukas Rettler",
     "license": "MIT",
     "dependencies": {
       "bcrypt": "^5.1.0",
